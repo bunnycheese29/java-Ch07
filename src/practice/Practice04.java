@@ -3,26 +3,22 @@ package practice;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class Practice01 {
+public class Practice04 {
 
   public static void main(String[] args) {
     Vector<Integer> vec = new Vector<>();
     Scanner scanner = new Scanner(System.in);
-    System.out.println("정수(-1이 입력될 때까지)");
-
     while (true) {
+      System.out.print("강수량 입력 (0 입력시 종료)>>");
       int n = scanner.nextInt();
-      if (n == -1) {
-        break;
-      }
+      if (n == 0) break;
       vec.add(n);
-      int max = vec.get(0);
+      int sum = 0;
       for (int i = 0; i < vec.size(); i++) {
-        if (vec.get(i) > max) {
-          max = vec.get(i);
-        }
+        System.out.print(vec.get(i) + " ");
+        sum += vec.get(i);
       }
-      System.out.println("가장 큰 수는 " + max);
+      System.out.println("\n현재 평균 " + (double) sum / (double) vec.size());
     }
   }
 }
