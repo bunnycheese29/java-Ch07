@@ -50,9 +50,11 @@ class WordQuiz {
     vec.add(new Word("statue", "조각상"));
   }
 
-  //보기 만들기
+  //makeExample() 함수가 돌면서 보기 만들기
+  //int example 4개의 정답들
   private int makeExample(int example[], int answerIndex) {
     //배열 하나를 만들어서 집어넣기 [], 정답도 넣어놓기
+    //중복 방지
     int nums[] = { -1, -1, -1, -1 }; //배열을 생성하면서 값을 넘기는 방법
     int index;
     for (int i = 0; i < 4; i++) {
@@ -95,7 +97,7 @@ class WordQuiz {
       String eng = vec.get(answerIndex).getEng(); //Word중 영어 뽑기
 
       int example[] = new int[4]; //문제 4개를 중복 없이 뽑기
-      int answerNum = makeExample(example, answerIndex); //문제 만들기, 정답 넣기  0,1,2,3을 리턴
+      int answerNum = makeExample(example, answerIndex); //문제 만들기, 정답 넣기 {4,6,8,12} 0,1,2,3을 리턴
       example[answerNum] = answerIndex;
 
       System.out.println(eng + "?");
